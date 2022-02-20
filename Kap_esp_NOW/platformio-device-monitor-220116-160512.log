@@ -1,0 +1,18 @@
+16:05:14.467 > R~�grSTARTUP
+16:05:14.866 > [   862][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+16:05:14.946 > [   863][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+16:05:15.038 > Sent with success
+16:05:15.045 > Last Packet Send Status:	Delivery Fail
+16:05:15.090 > 
+16:05:15.954 > Sent with success
+16:05:15.970 > 
+16:05:15.986 > Last Packet Send Status:	Delivery Fail
+16:05:16.962 > Sent with success
+16:05:16.979 > 
+16:05:16.994 > Last Packet Send Status:	Delivery Fail
+16:05:17.969 > Sent with success
+16:05:17.985 > 
+16:05:17.985 > Last Packet Send Status:	Delivery Fail
+16:05:18.977 > Sent with success
+16:05:18.993 > 
+16:05:18.993 > Last Packet Send Status:	Delivery Fail

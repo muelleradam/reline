@@ -1,0 +1,135 @@
+22:03:43.313 > Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+22:03:43.410 > 
+22:03:43.410 > Core  0 register dump:
+22:03:43.426 > PC      : 0x4002c8ef  PS      : 0x00060833  A0      : 0x80086216  A1      : 0x3ffcfe00  
+22:03:43.522 > A2      : 0xff00ffff  A3      : 0xff01004b  A4      : 0xdb800000  A5      : 0x3ff9f700  
+22:03:43.618 > A6      : 0x00000000  A7      : 0x3ffcdec0  A8      : 0x8002c8e9  A9      : 0x3ffcfde0  
+22:03:43.714 > A10     : 0xff01004b  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+22:03:43.810 > A14     : 0x00000000  A15     : 0x3ffcdec0  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+22:03:43.906 > EXCVADDR: 0xff010037  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x400276c5  
+22:03:44.002 > 
+22:03:44.002 > 
+22:03:44.002 > Backtrace:0x4002c8ec:0x3ffcfe000x40086213:0x3ffcfe20 0x40085255:0x3ffcfe40 0x40082a1c:0x3ffcfe60 0x400865e9:0x3ffcfe80 
+22:03:44.129 > 
+22:03:44.129 > 
+22:03:44.129 > 
+22:03:44.129 > 
+22:03:44.129 > ELF file SHA256: 0000000000000000
+22:03:44.178 > 
+22:03:44.178 > Rebooting...
+22:03:44.184 > R~�SgrSTARTUP
+22:03:44.600 > [  3375][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:44.664 > [  3376][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+22:03:45.831 > Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+22:03:45.927 > 
+22:03:45.927 > Core  0 register dump:
+22:03:45.959 > PC      : 0x4002c8ef  PS      : 0x00060833  A0      : 0x80086216  A1      : 0x3ffcfe00  
+22:03:46.054 > A2      : 0xff00ffff  A3      : 0xff01004b  A4      : 0xb4800000  A5      : 0x3ff9f700  
+22:03:46.135 > A6      : 0x00000000  A7      : 0x3ffcdec0  A8      : 0x8002c8e9  A9      : 0x3ffcfde0  
+22:03:46.231 > A10     : 0xff01004b  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+22:03:46.327 > A14     : 0x00000000  A15     : 0x3ffcdec0  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+22:03:46.423 > EXCVADDR: 0xff010037  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x400276c5  
+22:03:46.518 > 
+22:03:46.518 > 
+22:03:46.518 > Backtrace:0x4002c8ec:0x3ffcfe000x40086213:0x3ffcfe20 0x40085255:0x3ffcfe40 0x40082a1c:0x3ffcfe60 0x400865e9:0x3ffcfe80 
+22:03:46.646 > 
+22:03:46.646 > 
+22:03:46.646 > 
+22:03:46.646 > 
+22:03:46.646 > ELF file SHA256: 0000000000000000
+22:03:46.694 > 
+22:03:46.694 > Rebooting...
+22:03:46.704 > R~�SgrSTARTUP
+22:03:47.104 > [  5880][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:47.184 > [  5881][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+22:03:47.660 > R~�grSTARTUP
+22:03:48.068 > [   853][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:48.133 > [   854][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+22:03:49.310 > Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+22:03:49.396 > 
+22:03:49.396 > Core  0 register dump:
+22:03:49.428 > PC      : 0x4002c8ef  PS      : 0x00060833  A0      : 0x80086216  A1      : 0x3ffcfe00  
+22:03:49.524 > A2      : 0xff00ffff  A3      : 0xff01004b  A4      : 0x0a000000  A5      : 0x3ff9f700  
+22:03:49.620 > A6      : 0x00000000  A7      : 0x3ffcdec0  A8      : 0x8002c8e9  A9      : 0x3ffcfde0  
+22:03:49.715 > A10     : 0xff01004b  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+22:03:49.795 > A14     : 0x00000000  A15     : 0x3ffcdec0  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+22:03:49.891 > EXCVADDR: 0xff010037  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x400276c5  
+22:03:49.987 > 
+22:03:49.987 > 
+22:03:49.987 > Backtrace:0x4002c8ec:0x3ffcfe000x40086213:0x3ffcfe20 0x40085255:0x3ffcfe40 0x40082a1c:0x3ffcfe60 0x400865e9:0x3ffcfe80 
+22:03:50.115 > 
+22:03:50.115 > 
+22:03:50.131 > 
+22:03:50.131 > 
+22:03:50.131 > ELF file SHA256: 0000000000000000
+22:03:50.164 > 
+22:03:50.164 > Rebooting...
+22:03:50.178 > R~�SgrSTARTUP
+22:03:50.592 > [  3360][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:50.656 > [  3361][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+22:03:51.810 > Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+22:03:51.920 > 
+22:03:51.920 > Core  0 register dump:
+22:03:51.952 > PC      : 0x4002c8ef  PS      : 0x00060833  A0      : 0x80086216  A1      : 0x3ffcfe00  
+22:03:52.032 > A2      : 0xff00ffff  A3      : 0xff01004b  A4      : 0xe6000000  A5      : 0x3ff9f700  
+22:03:52.128 > A6      : 0x00000000  A7      : 0x3ffcdec0  A8      : 0x8002c8e9  A9      : 0x3ffcfde0  
+22:03:52.224 > A10     : 0xff01004b  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+22:03:52.320 > A14     : 0x00000000  A15     : 0x3ffcdec0  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+22:03:52.416 > EXCVADDR: 0xff010037  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x400276c5  
+22:03:52.512 > 
+22:03:52.512 > 
+22:03:52.512 > Backtrace:0x4002c8ec:0x3ffcfe000x40086213:0x3ffcfe20 0x40085255:0x3ffcfe40 0x40082a1c:0x3ffcfe60 0x400865e9:0x3ffcfe80 
+22:03:52.640 > 
+22:03:52.640 > 
+22:03:52.640 > 
+22:03:52.640 > 
+22:03:52.640 > ELF file SHA256: 0000000000000000
+22:03:52.688 > 
+22:03:52.688 > Rebooting...
+22:03:52.695 > R~�SgrSTARTUP
+22:03:53.111 > [  5867][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:53.175 > [  5868][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+22:03:54.342 > Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+22:03:54.439 > 
+22:03:54.439 > Core  0 register dump:
+22:03:54.471 > PC      : 0x4002c8ef  PS      : 0x00060833  A0      : 0x80086216  A1      : 0x3ffcfe00  
+22:03:54.551 > A2      : 0xff00ffff  A3      : 0xff01004b  A4      : 0xc2000000  A5      : 0x3ff9f700  
+22:03:54.647 > A6      : 0x00000000  A7      : 0x3ffcdec0  A8      : 0x8002c8e9  A9      : 0x3ffcfde0  
+22:03:54.743 > A10     : 0xff01004b  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+22:03:54.839 > A14     : 0x00000000  A15     : 0x3ffcdec0  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+22:03:54.935 > EXCVADDR: 0xff010037  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x400276c5  
+22:03:55.031 > 
+22:03:55.031 > 
+22:03:55.031 > Backtrace:0x4002c8ec:0x3ffcfe000x40086213:0x3ffcfe20 0x40085255:0x3ffcfe40 0x40082a1c:0x3ffcfe60 0x400865e9:0x3ffcfe80 
+22:03:55.159 > 
+22:03:55.159 > 
+22:03:55.159 > 
+22:03:55.159 > 
+22:03:55.159 > ELF file SHA256: 0000000000000000
+22:03:55.207 > 
+22:03:55.207 > Rebooting...
+22:03:55.215 > R~�SgrSTARTUP
+22:03:55.610 > [  8371][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:55.695 > [  8372][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+22:03:56.862 > Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+22:03:56.958 > 
+22:03:56.958 > Core  0 register dump:
+22:03:56.974 > PC      : 0x4002c8ef  PS      : 0x00060833  A0      : 0x80086216  A1      : 0x3ffcfe00  
+22:03:57.070 > A2      : 0xff00ffff  A3      : 0xff01004b  A4      : 0xa0400000  A5      : 0x3ff9f700  
+22:03:57.166 > A6      : 0x00000000  A7      : 0x3ffcdec0  A8      : 0x8002c8e9  A9      : 0x3ffcfde0  
+22:03:57.259 > A10     : 0xff01004b  A11     : 0x00000000  A12     : 0x00000000  A13     : 0x00000000  
+22:03:57.357 > A14     : 0x00000000  A15     : 0x3ffcdec0  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+22:03:57.454 > EXCVADDR: 0xff010037  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x400276c5  
+22:03:57.550 > 
+22:03:57.550 > 
+22:03:57.550 > Backtrace:0x4002c8ec:0x3ffcfe000x40086213:0x3ffcfe20 0x40085255:0x3ffcfe40 0x40082a1c:0x3ffcfe60 0x400865e9:0x3ffcfe80 
+22:03:57.678 > 
+22:03:57.678 > 
+22:03:57.678 > 
+22:03:57.678 > 
+22:03:57.678 > ELF file SHA256: 0000000000000000
+22:03:57.726 > 
+22:03:57.726 > Rebooting...
+22:03:57.730 > R~�SgrSTARTUP
+22:03:58.146 > [ 10880][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+22:03:58.210 > [ 10881][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START

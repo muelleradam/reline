@@ -1,0 +1,263 @@
+16:17:23.140 > R~�grSTARTUP
+16:17:23.731 > [  1066][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
+16:17:23.812 > [  1067][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
+16:17:23.892 > 1.52
+16:17:23.892 > Sent with success
+16:17:23.908 > 
+16:17:23.924 > Last Packet Send Status:	Delivery Fail
+16:17:23.956 > 1.37
+16:17:23.972 > Sent with success
+16:17:23.988 > 
+16:17:23.988 > Last Packet Send Status:	Delivery Fail
+16:17:24.195 > 1.37
+16:17:24.196 > Sent with success
+16:17:24.259 > 
+16:17:24.260 > Last Packet Send Status:	Delivery Fail
+16:17:24.515 > 1.37
+16:17:24.516 > Sent with success
+16:17:24.579 > 
+16:17:24.580 > Last Packet Send Status:	Delivery Fail
+16:17:24.836 > 1.37
+16:17:24.852 > Sent with success
+16:17:24.899 > 
+16:17:24.900 > Last Packet Send Status:	Delivery Fail
+16:17:25.171 > 1.37
+16:17:25.172 > Sent with success
+16:17:25.235 > 
+16:17:25.236 > Last Packet Send Status:	Delivery Fail
+16:17:25.492 > 1.37
+16:17:25.492 > Sent with success
+16:17:25.571 > 
+16:17:25.572 > Last Packet Send Status:	Delivery Fail
+16:17:25.811 > 1.37
+16:17:25.812 > Sent with success
+16:17:25.875 > 
+16:17:25.876 > Last Packet Send Status:	Delivery Fail
+16:17:26.131 > 1.37
+16:17:26.147 > Sent with success
+16:17:26.195 > 
+16:17:26.211 > Last Packet Send Status:	Delivery Fail
+16:17:26.467 > 1.37
+16:17:26.468 > Sent with success
+16:17:26.484 > 
+16:17:26.500 > Last Packet Send Status:	Delivery Fail
+16:17:26.787 > 1.37
+16:17:26.787 > Sent with success
+16:17:26.803 > 
+16:17:26.803 > Last Packet Send Status:	Delivery Fail
+16:17:27.107 > 1.37
+16:17:27.123 > Sent with success
+16:17:27.139 > 
+16:17:27.139 > Last Packet Send Status:	Delivery Fail
+16:17:27.427 > 1.38
+16:17:27.443 > Sent with success
+16:17:27.459 > 
+16:17:27.459 > Last Packet Send Status:	Delivery Fail
+16:17:27.747 > 1.36
+16:17:27.763 > Sent with success
+16:17:27.779 > 
+16:17:27.779 > Last Packet Send Status:	Delivery Fail
+16:17:28.083 > 1.32
+16:17:28.083 > Sent with success
+16:17:28.114 > 
+16:17:28.114 > Last Packet Send Status:	Delivery Fail
+16:17:28.402 > 1.29
+16:17:28.418 > Sent with success
+16:17:28.434 > 
+16:17:28.434 > Last Packet Send Status:	Delivery Fail
+16:17:28.738 > 1.23
+16:17:28.739 > Sent with success
+16:17:28.755 > 
+16:17:28.755 > Last Packet Send Status:	Delivery Fail
+16:17:29.058 > 1.17
+16:17:29.058 > Sent with success
+16:17:29.075 > 
+16:17:29.075 > Last Packet Send Status:	Delivery Fail
+16:17:29.378 > 1.16
+16:17:29.379 > Sent with success
+16:17:29.395 > 
+16:17:29.395 > Last Packet Send Status:	Delivery Fail
+16:17:29.698 > 1.21
+16:17:29.699 > Sent with success
+16:17:29.714 > 
+16:17:29.730 > Last Packet Send Status:	Delivery Fail
+16:17:30.017 > 1.38
+16:17:30.034 > Sent with success
+16:17:30.050 > 
+16:17:30.050 > Last Packet Send Status:	Delivery Fail
+16:17:30.353 > 1.38
+16:17:30.354 > Sent with success
+16:17:30.370 > 
+16:17:30.370 > Last Packet Send Status:	Delivery Fail
+16:17:30.673 > 1.37
+16:17:30.673 > Sent with success
+16:17:30.689 > 
+16:17:30.689 > Last Packet Send Status:	Delivery Fail
+16:17:30.993 > 1.38
+16:17:30.994 > Sent with success
+16:17:31.026 > 
+16:17:31.026 > Last Packet Send Status:	Delivery Fail
+16:17:31.313 > 1.38
+16:17:31.314 > Sent with success
+16:17:31.346 > 
+16:17:31.346 > Last Packet Send Status:	Delivery Fail
+16:17:31.649 > 1.37
+16:17:31.650 > Sent with success
+16:17:31.666 > 
+16:17:31.666 > Last Packet Send Status:	Delivery Fail
+16:17:31.969 > 1.37
+16:17:31.969 > Sent with success
+16:17:31.985 > 
+16:17:32.001 > Last Packet Send Status:	Delivery Fail
+16:17:32.289 > 1.37
+16:17:32.290 > Sent with success
+16:17:32.306 > 
+16:17:32.322 > Last Packet Send Status:	Delivery Fail
+16:17:32.625 > 1.34
+16:17:32.625 > Sent with success
+16:17:32.641 > 
+16:17:32.641 > Last Packet Send Status:	Delivery Fail
+16:17:32.929 > 1.27
+16:17:32.945 > Sent with success
+16:17:32.961 > 
+16:17:32.961 > Last Packet Send Status:	Delivery Fail
+16:17:33.264 > 1.23
+16:17:33.265 > Sent with success
+16:17:33.297 > 
+16:17:33.297 > Last Packet Send Status:	Delivery Fail
+16:17:33.584 > 1.22
+16:17:33.585 > Sent with success
+16:17:33.617 > 
+16:17:33.617 > Last Packet Send Status:	Delivery Fail
+16:17:33.905 > 1.21
+16:17:33.921 > Sent with success
+16:17:33.937 > 
+16:17:33.937 > Last Packet Send Status:	Delivery Fail
+16:17:34.224 > 1.18
+16:17:34.241 > Sent with success
+16:17:34.257 > 
+16:17:34.257 > Last Packet Send Status:	Delivery Fail
+16:17:34.560 > 1.16
+16:17:34.561 > Sent with success
+16:17:34.592 > 
+16:17:34.593 > Last Packet Send Status:	Delivery Fail
+16:17:34.880 > 1.15
+16:17:34.880 > Sent with success
+16:17:34.897 > 
+16:17:34.897 > Last Packet Send Status:	Delivery Fail
+16:17:35.200 > 1.20
+16:17:35.216 > Sent with success
+16:17:35.232 > 
+16:17:35.232 > Last Packet Send Status:	Delivery Fail
+16:17:35.520 > 1.33
+16:17:35.536 > Sent with success
+16:17:35.552 > 
+16:17:35.552 > Last Packet Send Status:	Delivery Fail
+16:17:35.840 > 1.37
+16:17:35.857 > Sent with success
+16:17:35.873 > 
+16:17:35.873 > Last Packet Send Status:	Delivery Fail
+16:17:36.176 > 1.37
+16:17:36.177 > Sent with success
+16:17:36.193 > 
+16:17:36.193 > Last Packet Send Status:	Delivery Fail
+16:17:36.495 > 1.37
+16:17:36.512 > Sent with success
+16:17:36.528 > 
+16:17:36.528 > Last Packet Send Status:	Delivery Fail
+16:17:36.831 > 1.35
+16:17:36.832 > Sent with success
+16:17:36.847 > 
+16:17:36.847 > Last Packet Send Status:	Delivery Fail
+16:17:37.151 > 1.30
+16:17:37.152 > Sent with success
+16:17:37.168 > 
+16:17:37.168 > Last Packet Send Status:	Delivery Fail
+16:17:37.471 > 1.25
+16:17:37.472 > Sent with success
+16:17:37.488 > 
+16:17:37.503 > Last Packet Send Status:	Delivery Fail
+16:17:37.792 > 1.21
+16:17:37.792 > Sent with success
+16:17:37.808 > 
+16:17:37.824 > Last Packet Send Status:	Delivery Fail
+16:17:38.127 > 1.19
+16:17:38.127 > Sent with success
+16:17:38.144 > 
+16:17:38.144 > Last Packet Send Status:	Delivery Fail
+16:17:38.447 > 1.18
+16:17:38.448 > Sent with success
+16:17:38.464 > 
+16:17:38.464 > Last Packet Send Status:	Delivery Fail
+16:17:38.767 > 1.35
+16:17:38.767 > Sent with success
+16:17:38.799 > 
+16:17:38.799 > Last Packet Send Status:	Delivery Fail
+16:17:39.087 > 1.37
+16:17:39.087 > Sent with success
+16:17:39.119 > 
+16:17:39.119 > Last Packet Send Status:	Delivery Fail
+16:17:39.407 > 1.38
+16:17:39.423 > Sent with success
+16:17:39.439 > 
+16:17:39.439 > Last Packet Send Status:	Delivery Fail
+16:17:39.727 > 1.38
+16:17:39.743 > Sent with success
+16:17:39.759 > 
+16:17:39.759 > Last Packet Send Status:	Delivery Fail
+16:17:40.063 > 1.38
+16:17:40.063 > Sent with success
+16:17:40.095 > 
+16:17:40.095 > Last Packet Send Status:	Delivery Fail
+16:17:40.383 > 1.37
+16:17:40.383 > Sent with success
+16:17:40.415 > 
+16:17:40.415 > Last Packet Send Status:	Delivery Fail
+16:17:40.702 > 1.37
+16:17:40.718 > Sent with success
+16:17:40.734 > 
+16:17:40.734 > Last Packet Send Status:	Delivery Fail
+16:17:41.022 > 1.37
+16:17:41.039 > Sent with success
+16:17:41.055 > 
+16:17:41.055 > Last Packet Send Status:	Delivery Fail
+16:17:41.342 > 1.37
+16:17:41.358 > Sent with success
+16:17:41.374 > 
+16:17:41.374 > Last Packet Send Status:	Delivery Fail
+16:17:41.678 > 1.37
+16:17:41.694 > Sent with success
+16:17:41.710 > 
+16:17:41.710 > Last Packet Send Status:	Delivery Fail
+16:17:41.999 > 1.37
+16:17:42.015 > Sent with success
+16:17:42.031 > 
+16:17:42.031 > Last Packet Send Status:	Delivery Fail
+16:17:42.318 > 1.38
+16:17:42.334 > Sent with success
+16:17:42.350 > 
+16:17:42.350 > Last Packet Send Status:	Delivery Fail
+16:17:42.638 > 1.37
+16:17:42.655 > Sent with success
+16:17:42.671 > 
+16:17:42.671 > Last Packet Send Status:	Delivery Fail
+16:17:42.974 > 1.38
+16:17:42.974 > Sent with success
+16:17:42.990 > 
+16:17:43.006 > Last Packet Send Status:	Delivery Fail
+16:17:43.293 > 1.37
+16:17:43.294 > Sent with success
+16:17:43.310 > 
+16:17:43.326 > Last Packet Send Status:	Delivery Fail
+16:17:43.629 > 1.38
+16:17:43.630 > Sent with success
+16:17:43.646 > 
+16:17:43.646 > Last Packet Send Status:	Delivery Fail
+16:17:43.950 > 1.37
+16:17:43.950 > Sent with success
+16:17:43.966 > 
+16:17:43.966 > Last Packet Send Status:	Delivery Fail
+16:17:44.270 > 1.37
+16:17:44.270 > Sent with success
+16:17:44.286 > 
+16:17:44.286 > Last Packet Send Status:	Delivery Fail
