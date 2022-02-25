@@ -3,6 +3,10 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
+
+//const unsigned int MAX_MESSAGE_LENGTH = 10;
+
+
 // REPLACE WITH THE RECEIVER'S MAC Address
 uint8_t broadcastAddress[] = {0x24, 0x6F, 0x28, 0x7B, 0xAD, 0x08};
 
@@ -57,12 +61,39 @@ void setup() {
  
 void loop() {
   // Set values to send
-  myData.id = 1;
-  myData.x = random(0,50);
-  myData.y = random(0,50);
+//  myData.id = 1;
+//  myData.x = random(0,50);
+//  myData.y = random(0,50);
+//  char message[10] = "test";
+  char concat[8];
+  char preamble[] = "T";
+
+  float val = 20.33;
+//  int val = 20;
+
+//  dtostrf(val,5,2,message);
+//
+//  message[6] = " ";
+//  message[7] = "T";
+
+  int n = sprintf(concat,"%s:%.2f%s", preamble, val, "\n");
+//  sprintf(concat,"%s:%s", concat, '\n');
+
+//  Serial.println(concat);
+  Serial.print(concat);
+  Serial.println(n);
+
+//  static char message[MAX_MESSAGE_LENGTH];
+//  static unsigned int message_pos = 0;
+//  float rnd = 20.336;
+//  for(int i=0; i<=sizeof(rnd); i++)
+//    message[i] = rnd;
+//  Serial.println(message);
 
   // Send message via ESP-NOW
-  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
+//  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
+//  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &message, sizeof(message));
+  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &concat, sizeof(concat));
    
   if (result == ESP_OK) {
     Serial.println("Sent with success");

@@ -66,7 +66,8 @@ void loop() {
 
   
   static char message[MAX_MESSAGE_LENGTH];
-  static unsigned int message_pos = 0;
+  static char empty_message[MAX_MESSAGE_LENGTH] = {0};
+  static unsigned int message_pos = 2;
 
   while(Serial.available() > 0)
   {
@@ -76,12 +77,14 @@ void loop() {
     {
       //Serial.println(message);
 
-      message[message_pos] = inputByte;
-      message_pos++;
+//      message[message_pos] = ' ';
+//      message_pos++;
+//      message[message_pos] = 'C';
+//      message_pos++;
+      message[0] = 'C';
+      message[1] = ':';
 
-      message[message_pos] = ' ';
-      message_pos++;
-      message[message_pos] = 'C';
+      message[message_pos] = inputByte;
       message_pos++;
 
       esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &message, message_pos);
@@ -103,6 +106,8 @@ void loop() {
       }
 
 
+      memcpy(message, empty_message, MAX_MESSAGE_LENGTH);
+      message_pos = 2;
 
 //      message_pos = 0;
 //      message[message_pos] = 'C';

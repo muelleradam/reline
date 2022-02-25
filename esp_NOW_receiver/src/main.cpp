@@ -42,6 +42,8 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
 //  Serial.printf("val: %3f \n", boardsStruct[myData.id-1].val);
 //  Serial.printf("y value: %d \n", boardsStruct[myData.id-1].y);
 
+  Serial.println(char(incomingData[0]));
+
   for(int i = 2; i < len; i++)
   {
     Serial.print(char(incomingData[i]));

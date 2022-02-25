@@ -1,6 +1,0 @@
-15:55:10.735 > R~�grSTARTUP
-15:55:11.135 > [   856][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
-15:55:11.198 > [   857][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
-15:55:13.181 > R~�grSTARTUP
-15:55:13.580 > [   855][V][WiFiGeneric.cpp:273] _arduino_event_cb(): STA Started
-15:55:13.644 > [   856][D][WiFiGeneric.cpp:795] _eventCallback(): Arduino Event: 2 - STA_START
