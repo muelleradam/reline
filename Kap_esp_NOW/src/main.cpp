@@ -15,18 +15,14 @@ uint8_t broadcastAddress[] = {0x24, 0x6F, 0x28, 0x7B, 0xAD, 0x08};
 esp_now_peer_info_t peerInfo;
 
 void setup() {
-  // Init Serial Monitor
+  // Init Serial
   Serial.begin(9600);
-  Serial.println("STARTUP");
 
   // Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
 
   // Init ESP-NOW
-  if (esp_now_init() != ESP_OK) {
-    Serial.println("Error initializing ESP-NOW");
-    return;
-  }
+  if (esp_now_init() != ESP_OK) return;
 
   // Register peer
   memcpy(peerInfo.peer_addr, broadcastAddress, 6);
@@ -34,10 +30,7 @@ void setup() {
   peerInfo.encrypt = false;
   
   // Add peer        
-  if (esp_now_add_peer(&peerInfo) != ESP_OK){
-    Serial.println("Failed to add peer");
-    return;
-  }
+  if (esp_now_add_peer(&peerInfo) != ESP_OK) return;
 }
  
 void loop() {
@@ -60,14 +53,6 @@ void loop() {
       message_pos++;
 
       esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &message, message_pos);
-
-
-      if (result == ESP_OK) {
-        Serial.println("Sent with success");
-      }
-      else {
-        Serial.println("Error sending the data");
-      }
 
 
       memcpy(message, empty_message, MAX_MESSAGE_LENGTH);
