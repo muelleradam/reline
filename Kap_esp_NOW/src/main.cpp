@@ -11,17 +11,6 @@ const unsigned int MAX_MESSAGE_LENGTH = 10;
 // REPLACE WITH THE RECEIVER'S MAC Address
 uint8_t broadcastAddress[] = {0x24, 0x6F, 0x28, 0x7B, 0xAD, 0x08};
 
-// Structure example to send data
-// Must match the receiver structure
-typedef struct struct_message {
-    int id; // must be unique for each sender board
-    int x;
-    int y;
-} struct_message;
-
-// Create a struct_message called myData
-struct_message myData;
-
 // Create peer interface
 esp_now_peer_info_t peerInfo;
 
@@ -33,7 +22,6 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
  
 void setup() {
   // Init Serial Monitor
-//  Serial.begin(115200);
   Serial.begin(9600);
   Serial.println("STARTUP");
 
@@ -75,12 +63,6 @@ void loop() {
 
     if(inputByte == '\n')
     {
-      //Serial.println(message);
-
-//      message[message_pos] = ' ';
-//      message_pos++;
-//      message[message_pos] = 'C';
-//      message_pos++;
       message[0] = 'C';
       message[1] = ':';
 
@@ -90,14 +72,6 @@ void loop() {
       esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &message, message_pos);
 
 
-      
-
-//      float number = atof(message);
-//      Serial.println(number);
-//
-//      // Send message via ESP-NOW
-//      esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &number, sizeof(number));
-       
       if (result == ESP_OK) {
         Serial.println("Sent with success");
       }
@@ -109,12 +83,6 @@ void loop() {
       memcpy(message, empty_message, MAX_MESSAGE_LENGTH);
       message_pos = 2;
 
-//      message_pos = 0;
-//      message[message_pos] = 'C';
-//      message_pos++;
-//      message[message_pos] = ' ';
-//      message_pos++;
-
       break;
     }
     else
@@ -123,24 +91,6 @@ void loop() {
       message_pos++;
     }
   }
-
-
-
-//  // Set values to send
-//  myData.id = 1;
-//  myData.x = random(0,50);
-//  myData.y = random(0,50);
-//
-//  // Send message via ESP-NOW
-//  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
-//   
-//  if (result == ESP_OK) {
-//    Serial.println("Sent with success");
-//  }
-//  else {
-//    Serial.println("Error sending the data");
-//  }
-//  delay(1000);
 
   delay(10);
 }
