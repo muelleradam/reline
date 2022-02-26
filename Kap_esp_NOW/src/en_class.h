@@ -1,7 +1,11 @@
 #include <Arduino.h>
+#include <esp_now.h>
+#include <WiFi.h>
 
-//class espnow{
-//String concat_result(float* result, int numSensors);
-//public:
-//  String request_temperatures(float* result, int numSensors, DallasTemperature sensors);
-//};
+class espnow{
+uint8_t addr[6];
+esp_now_peer_info_t peerInfo;
+public:
+  bool connect(uint8_t *broadcastAddress);
+  void send(char *message, uint8_t len);
+};

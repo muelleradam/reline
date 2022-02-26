@@ -1,32 +1,35 @@
 #include <Arduino.h>
+#include <esp_now.h>
+#include <WiFi.h>
 
 #include "en_class.h"
 
-//String espnow::request_temperatures(float* result, int numSensors, DallasTemperature sensors)
-//{
-//  sensors.requestTemperatures(); 
-//  if(numSensors == 3)
-//  {
-//    result[0] = sensors.getTempCByIndex(0);
-//    result[1] = sensors.getTempCByIndex(1);
-//    result[2] = sensors.getTempCByIndex(2);
-//  }
-//  else if(numSensors == 2)
-//  {
-//    result[0] = sensors.getTempCByIndex(3);
-//    result[1] = sensors.getTempCByIndex(4);
-//  }
-//
-//  return espnow::concat_result(result, numSensors);
-//}
-//
-//String espnow::concat_result(float* result, int numSensors)
-//{
-//  String resultString;
-//  for(int i=0; i<numSensors; i++)
-//  {
-//    resultString = resultString + ' ' + result[i];
-//  }
-//
-//  return resultString;
-//}
+bool espnow::connect(uint8_t *broadcastAddress)
+{
+  memcpy(addr, broadcastAddress, 6);
+
+  // Create peer interface
+//  esp_now_peer_info_t peerInfo;
+
+  // Set device as a Wi-Fi Station
+  WiFi.mode(WIFI_STA);
+
+  // Init ESP-NOW
+  if (esp_now_init() != ESP_OK) return false;
+
+  // Register peer
+  memcpy(peerInfo.peer_addr, addr, 6);
+  peerInfo.channel = 0;  
+  peerInfo.encrypt = false;
+  
+  // Add peer        
+  if (esp_now_add_peer(&peerInfo) != ESP_OK) return false;
+
+
+  return true;
+}
+
+void espnow::send(char *message, uint8_t len)
+{
+  esp_err_t result = esp_now_send(addr, (uint8_t *) message, len);
+}
