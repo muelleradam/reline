@@ -1,3 +1,10 @@
+/*
+* Capacitive Sensor Code
+* by Adam Müller, 2022
+*
+* Esp-now class. Handling the wifi communication.
+*/
+
 #include <Arduino.h>
 #include <esp_now.h>
 #include <WiFi.h>
@@ -8,13 +15,10 @@ bool espnow::connect(uint8_t *broadcastAddress)
 {
   memcpy(addr, broadcastAddress, 6);
 
-  // Create peer interface
-//  esp_now_peer_info_t peerInfo;
-
-  // Set device as a Wi-Fi Station
+  // Set device as wifi station
   WiFi.mode(WIFI_STA);
 
-  // Init ESP-NOW
+  // Init esp-now
   if (esp_now_init() != ESP_OK) return false;
 
   // Register peer
@@ -25,10 +29,10 @@ bool espnow::connect(uint8_t *broadcastAddress)
   // Add peer        
   if (esp_now_add_peer(&peerInfo) != ESP_OK) return false;
 
-
   return true;
 }
 
+// send data over wifi
 void espnow::send(char *message, uint8_t len)
 {
   esp_err_t result = esp_now_send(addr, (uint8_t *) message, len);

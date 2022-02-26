@@ -1,13 +1,22 @@
+/*
+* Capacitive Sensor Code
+* by Adam Müller, 2022
+*
+* Uart class. Handling the serial communication.
+*/
+
 #include <Arduino.h>
 
 #include "uart_class.h"
 
+// Init communication and reset buffer
 void uart::init()
 {
   Serial.begin(9600);
   resetMsgBuff();
 }
 
+// Handle serial that is being received
 bool uart::update()
 {
 
@@ -36,12 +45,14 @@ bool uart::update()
   return false;
 }
 
+// Reset used variables
 void uart::resetMsgBuff()
 {
   memcpy(message, empty_message, MAX_MESSAGE_LENGTH);
   message_pos = 2;
 }
 
+// Getter function
 uint8_t uart::getMsg(char *buf)
 {
   uint8_t len = message_pos;
@@ -49,40 +60,3 @@ uint8_t uart::getMsg(char *buf)
   resetMsgBuff();
   return len;
 }
-
-//String uart::request_temperatures()
-//{
-//  static unsigned int message_pos = 2;
-//
-//  while(Serial.available() > 0){
-//
-//    char inputByte = Serial.read();
-//  
-//    if(inputByte == '\n')
-//    {
-//      message[0] = 'C';
-//      message[1] = ':';
-//  
-//      message[message_pos] = inputByte;
-//      message_pos++;
-//  
-////      esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &message, message_pos);
-//      return message, message_pos;
-//  
-//  
-//      memcpy(message, empty_message, MAX_MESSAGE_LENGTH);
-//      message_pos = 2;
-//  
-//      break;
-//    }
-//    else
-//    {
-//      message[message_pos] = inputByte;
-//      message_pos++;
-//    }
-//
-//  }
-//
-//
-//  return false;
-//}
