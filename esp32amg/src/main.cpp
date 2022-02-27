@@ -1,107 +1,51 @@
+/*
+* IR Sensor Code
+* by Adam Müller, 2022
+*
+* Read every pixel of the sensor and send the
+* read data over wifi.
+*
+* MIT License
+* 
+* Copyright (c) 2022 Adam M.
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+*/
+
 #include <Arduino.h>
 
-//#include <Wire.h>
-//#include <Adafruit_AMG88xx.h>
-#include <esp_now.h>
-#include <WiFi.h>
-
 #include "amg_class.h"
-//++++++++#include "en_class.h"
-//+++++++++++#include "config.h"
 
 amg hamg;
 
-//------Adafruit_AMG88xx amg;
-
-//------float pixels[AMG88xx_PIXEL_ARRAY_SIZE];
-
-// REPLACE WITH THE RECEIVER'S MAC Address
-//uint8_t broadcastAddress[] = {0x24, 0x6F, 0x28, 0x7B, 0xAD, 0x08};
-//++++++++++++++uint8_t broadcastAddress[] = {addr_1, addr_2, addr_3, addr_4, addr_5, addr_6};
-//++++++++++++++
-//++++++++++++++// Create peer interface
-//++++++++++++++esp_now_peer_info_t peerInfo;
-
-//// callback when data is sent
-//void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-//  Serial.print("\r\nLast Packet Send Status:\t");
-//  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-//}
-
 void setup() {
-//    Serial.begin(115200);
-//    Serial.println(F("AMG88xx pixels"));
-
-//    bool status;
-//    
-//    // default settings
-//    status = amg.begin(105);    // if 105 doesnt work you might need 104 (if solderjumper set)
   hamg.init();
-//-------------  amg.begin(105);    // if 105 doesnt work you might need 104 (if solderjumper set)
-//    if (!status) {
-//        Serial.println("Could not find a valid AMG88xx sensor, check wiring!");
-//        while (1);
-//    }
-    
-//    Serial.println("-- Pixels Test --");
 
-//    Serial.println();
-
-//-----------------  // Set device as a Wi-Fi Station
-//-----------------  WiFi.mode(WIFI_STA);
-//-----------------
-//-----------------  // Init ESP-NOW
-//-----------------  if (esp_now_init() != ESP_OK) return;
-//-----------------
-//-----------------//  // Once ESPNow is successfully Init, we will register for Send CB to
-//-----------------//  // get the status of Trasnmitted packet
-//-----------------//  esp_now_register_send_cb(OnDataSent);
-//-----------------  
-//-----------------  // Register peer
-//-----------------  memcpy(peerInfo.peer_addr, broadcastAddress, 6);
-//-----------------  peerInfo.channel = 0;  
-//-----------------  peerInfo.encrypt = false;
-//-----------------  
-//-----------------  // Add peer        
-//-----------------  if (esp_now_add_peer(&peerInfo) != ESP_OK) return;
-
-
-  delay(100); // let sensor boot up
+  // let the sensor boot up
+  delay(100);
 }
 
 
 void loop() { 
-  //read all the pixels
-//-------  amg.readPixels(pixels);
-//-------
-//-------
-//-------  float out = 0;
-//-------  char new_out[10];
-//-------
-//-------
-//-------  for(int i=1; i<=AMG88xx_PIXEL_ARRAY_SIZE; i++){
-//-------    out = pixels[i-1];
-//-------    sprintf(new_out, "%i:%.2f", i-1, out);
-//-------//    Serial.println(new_out);
-//-------
-//-------    esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) new_out, strlen(new_out));
-//-------//    if (result == ESP_OK) {
-//-------//      Serial.println("Sent with success");
-//-------//    }
-//-------//    else {
-//-------//      Serial.println("Error sending the data");
-//-------//    }
-//-------
-//-------  }
   hamg.read();
 
-//++++++++  if(hamg.read())
-//++++++++  {
-//++++++++
-//++++++++    char out[MESSAGE_LENGTH];
-//++++++++    uint8_t len = hamg.getMsg(out);
-//++++++++    esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) out, len);
-//++++++++  }
-
+  // set update rate, no high-speed needed 
   delay(250);
 }
