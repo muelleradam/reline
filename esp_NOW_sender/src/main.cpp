@@ -1,7 +1,13 @@
 #include <Arduino.h>
 
+#include <Wire.h>
+#include <Adafruit_AMG88xx.h>
 #include <esp_now.h>
 #include <WiFi.h>
+
+Adafruit_AMG88xx amg;
+
+float pixels[AMG88xx_PIXEL_ARRAY_SIZE];
 
 // REPLACE WITH THE RECEIVER'S MAC Address
 uint8_t broadcastAddress[] = {0x24, 0x6F, 0x28, 0x7B, 0xAD, 0x08};
@@ -42,15 +48,56 @@ void setup() {
     Serial.println("Failed to add peer");
     return;
   }
+
+
+
+  bool status;
+    
+  // default settings
+//    status = amg.begin(104);
+  status = amg.begin(105);
+  if (!status) {
+      Serial.println("Could not find a valid AMG88xx sensor, check wiring!");
+      while (1);
+  }
+  
+  Serial.println("-- Pixels Test --");
+  Serial.println();
+
+//    pinMode(13, OUTPUT);
+
+  delay(100); // let sensor boot up
 }
  
 void loop() {
-  char concat[8];
+  //read all the pixels
+  amg.readPixels(pixels);
+
+  char values[400];
+  float out = 0;
+
+  Serial.print("[");
+  for(int i=1; i<=AMG88xx_PIXEL_ARRAY_SIZE; i++){
+    out = pixels[i-1];
+//    Serial.print(pixels[i-1]);
+    Serial.print(out);
+    Serial.print(", ");
+    sprintf(values, "%s%.2f", values, out);
+  }
+  Serial.println("]");
+  Serial.println();
+
+//  delay(250);
+
+
+
+  char concat[400];
   char preamble[] = "T";
 
-  float val = 20.33;
-
-  int n = sprintf(concat,"%s:%.2f%s", preamble, val, "\n");
+//  float val = 20.33;
+//
+//  int n = sprintf(concat,"%s:%.2f%s", preamble, val, "\n");
+  int n = sprintf(concat,"%s:%s%s", preamble, values, "\n");
 
   Serial.print(concat);
   Serial.println(n);
@@ -63,5 +110,6 @@ void loop() {
   else {
     Serial.println("Error sending the data");
   }
-  delay(1000);
+//  delay(1000);
+  delay(250);
 }
