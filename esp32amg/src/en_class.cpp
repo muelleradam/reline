@@ -1,5 +1,5 @@
 /*
-* Capacitive Sensor Code
+* IR Sensor Code
 * by Adam Müller, 2022
 *
 * Esp-now class. Handling the wifi communication.
