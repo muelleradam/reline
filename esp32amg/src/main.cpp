@@ -28,8 +28,7 @@ void setup() {
     bool status;
     
     // default settings
-//    status = amg.begin(104);
-    status = amg.begin(105);
+    status = amg.begin(105);    // if 105 doesnt work you might need 104 (if solderjumper set)
     if (!status) {
         Serial.println("Could not find a valid AMG88xx sensor, check wiring!");
         while (1);
@@ -38,9 +37,6 @@ void setup() {
     Serial.println("-- Pixels Test --");
 
     Serial.println();
-
-//    pinMode(13, OUTPUT);
-
 
   // Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
@@ -76,11 +72,8 @@ void loop() {
   amg.readPixels(pixels);
 
 
-//  char values[400] = {};
-//  char values[500] = {};
   float out = 0;
   char new_out[10];
-//  int x = 0;
 
 
   for(int i=1; i<=AMG88xx_PIXEL_ARRAY_SIZE; i++){
@@ -96,98 +89,7 @@ void loop() {
       Serial.println("Error sending the data");
     }
 
-//    for(int j=0; j < strlen(new_out); j++)
-//    {
-//      values[x] = new_out[j];
-//      x = x+1;
-//    }
-
   }
-//  Serial.println(values);
-
-////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//
-//  char concat[600];
-//  char preamble[] = "T";
-//
-////  float val = 20.33;
-////
-////  int n = sprintf(concat,"%s:%.2f%s", preamble, val, "\n");
-//  int n = sprintf(concat,"%s:%s%s", preamble, values, "\n");
-//
-//  Serial.print(concat);
-//  Serial.println(n);
-//
-//  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) concat, strlen(concat));
-//   
-//  if (result == ESP_OK) {
-//    Serial.println("Sent with success");
-//  }
-//  else {
-//    Serial.println("Error sending the data");
-//  }
-//
-////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
 
   delay(250);
 }
-
-
-
-
-//void loop() { 
-//  //read all the pixels
-//  amg.readPixels(pixels);
-//
-//
-////  char values[400] = {};
-//  char values[500] = {};
-//  float out = 0;
-//  char new_out[10];
-//  int x = 0;
-//
-//
-//  for(int i=1; i<=AMG88xx_PIXEL_ARRAY_SIZE; i++){
-//    out = pixels[i-1];
-//    sprintf(new_out, "%.1f", out);
-//    for(int j=0; j < strlen(new_out); j++)
-//    {
-//      if(new_out[j] != '.')
-//      {
-//        values[x] = new_out[j];
-//        x = x+1;
-//      }
-//    }
-//  }
-//  Serial.println(values);
-//
-////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//
-//  char concat[600];
-//  char preamble[] = "T";
-//
-////  float val = 20.33;
-////
-////  int n = sprintf(concat,"%s:%.2f%s", preamble, val, "\n");
-//  int n = sprintf(concat,"%s:%s%s", preamble, values, "\n");
-//
-//  Serial.print(concat);
-//  Serial.println(n);
-//
-//  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) concat, strlen(concat));
-//   
-//  if (result == ESP_OK) {
-//    Serial.println("Sent with success");
-//  }
-//  else {
-//    Serial.println("Error sending the data");
-//  }
-//
-////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//
-//
-//
-//  delay(250);
-//}
