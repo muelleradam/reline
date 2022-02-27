@@ -28,6 +28,7 @@
 * SOFTWARE.
 *
 */
+
 #include <Arduino.h>
 
 #include "uart_class.h"
