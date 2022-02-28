@@ -33,14 +33,75 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
+float arr[64] = {0};
+
 void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) {
 
-  Serial.println(char(incomingData[0]));
+//  Serial.println(char(incomingData[0]));
+//  float arr[64] = {0};
+//  for(int i=0; i<64; i++) Serial.print(arr[i]);
 
-  for(int i = 2; i < len; i++)
+  if(char(incomingData[0]) == 'C')
   {
-    Serial.print(char(incomingData[i]));
+    Serial.println(char(incomingData[0]));
+    for(int i = 2; i < len; i++)
+    {
+      Serial.print(char(incomingData[i]));
+    }
   }
+  else
+  {
+    int temp_val_1 = 0;
+    float temp_val_2 = 0;
+    int temp_cnt = 3;
+    char temp_arr_1[3] = {};
+    char empty_temp_arr_1[3] = {};
+    char temp_arr_2[5] = {};
+    char empty_temp_arr_2[5] = {};
+
+    for(int i = 0; i < len; i++)
+    {
+      Serial.print(char(incomingData[i]));
+      if(char(incomingData[i]) == ':')
+      {
+//        Serial.println(i);
+//        Serial.println(temp_arr_1);
+        temp_val_1 = atoi(temp_arr_1);
+//        Serial.println(temp_val_1);
+
+        temp_cnt = i;
+//        temp_cnt = strlen(temp_arr_1);
+
+        memcpy(temp_arr_1, empty_temp_arr_1, 3);
+      }
+      if(i > temp_cnt)
+      {
+        temp_arr_2[i-temp_cnt-1] = char(incomingData[i]);
+        if(i == len-1)
+        {
+          Serial.println("LEL");
+          temp_val_2 = atoi(temp_arr_2);
+          Serial.println(temp_val_1);
+          Serial.println(temp_val_2);
+          Serial.println(temp_arr_2);
+          arr[temp_val_1] = temp_val_2;
+
+//          Serial.println(arr);
+          for(int j=0; j<64; j++) Serial.print(arr[j]);
+
+          memcpy(temp_arr_2, empty_temp_arr_2, 5);
+          temp_val_1 = 0;
+          temp_val_2 = 0;
+          temp_cnt = 3;
+        }
+      } else {
+        temp_arr_1[i] = char(incomingData[i]);
+      }
+    
+    }
+
+  }
+
 }
  
 void setup() {
