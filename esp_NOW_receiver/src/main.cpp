@@ -36,6 +36,8 @@
 float arr[64] = {0};
 char matlab_arr[453] = {0};    // 64*7 + 7
 char empty_matlab_arr[453] = {0};    // 64*7 + 7
+int count = 0;
+float cap_val = 0;
 
 void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) {
 
@@ -53,12 +55,15 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
       temp_arr[i-2] = char(incomingData[i]);
       matlab_arr[i-2] = char(incomingData[i]);
     }
+    cap_val = atof(temp_arr);
 //    matlab_arr[0] = atoi(temp_arr);
 //    for(int j=0; j<len-2; j++) Serial.print(temp_arr[j]);
     memcpy(temp_arr, empty_temp_arr, len-2);
   }
   else
   {
+    count  = count + 1;
+
     int temp_val_1 = 0;
     float temp_val_2 = 0;
     int temp_cnt = 3;
@@ -95,15 +100,15 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
           char empty_test_temp[10] = {};
           for(int k=0; k<64; k++)
           {
-            if(arr[k] <= 0.001)
-            {
-              sprintf(test_temp, "%.2f", 10.00);
-            }
-            else
-            {
-              sprintf(test_temp, "%.2f", arr[k]);
-            }
-//            sprintf(test_temp, "%.2f", arr[k]);
+//            if(arr[k] <= 0.001)
+//            {
+//              sprintf(test_temp, "%.2f", 10.00);
+//            }
+//            else
+//            {
+//              sprintf(test_temp, "%.2f", arr[k]);
+//            }
+            sprintf(test_temp, "%.2f", arr[k]);
 //            Serial.println(test_temp);
             for(int g=0; g<strlen(test_temp); g++)
             {
@@ -139,8 +144,21 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
 //  Serial.println("-----------");
 //  memcpy(matlab_arr, empty_matlab_arr, strlen(matlab_arr));
 
-  for(int h=0; h<strlen(matlab_arr); h++) Serial.print(matlab_arr[h]);
-  Serial.println();
+//  for(int h=0; h<strlen(matlab_arr); h++) Serial.print(matlab_arr[h]);
+//  Serial.println();
+
+  if(count == 64)
+  {
+    Serial.print(cap_val, 3);
+    Serial.print(", ");
+    for(int j=0; j<64; j++)
+    {
+      Serial.print(arr[j]);
+      Serial.print(", ");
+    }
+    Serial.println();
+    count = 0;
+  }
 
 }
  
