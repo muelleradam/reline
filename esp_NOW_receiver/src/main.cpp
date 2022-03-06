@@ -86,7 +86,7 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
         temp_arr_2[i-temp_cnt-1] = char(incomingData[i]);
         if(i == len-1)
         {
-          temp_val_2 = atoi(temp_arr_2);
+          temp_val_2 = atof(temp_arr_2);
           arr[temp_val_1] = temp_val_2;
 
 //          for(int j=0; j<64; j++) Serial.print(arr[j]);               // irgendwo hier werden die Nachkommastellen zu 0 ????????????????
@@ -97,7 +97,7 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
           {
             if(arr[k] <= 0.001)
             {
-              sprintf(test_temp, "%.2f", 1.00);
+              sprintf(test_temp, "%.2f", 10.00);
             }
             else
             {
