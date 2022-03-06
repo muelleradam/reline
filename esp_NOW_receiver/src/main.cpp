@@ -33,37 +33,41 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
+// global values only to gather all of the data in one spot
+// in future versions this may be redone in a way that the data can be worked with
+// for now the data only gets visualised so there is no need for complex code in this stage
 float arr[64] = {0};
-char matlab_arr[453] = {0};    // 64*7 + 7
-char empty_matlab_arr[453] = {0};    // 64*7 + 7
-int count = 0;
 float cap_val = 0;
+int count = 0;
 
+// callback for received data
 void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) {
 
-//  Serial.println(char(incomingData[0]));
-//  float arr[64] = {0};
-//  for(int i=0; i<64; i++) Serial.print(arr[i]);
-
-  matlab_arr[5] = ',';
+  // differentiate between the capacitive value and the temperature data
+  // capacitive value has a leading 'C'
   if(char(incomingData[0]) == 'C')
   {
+    // temporary variables used
     char temp_arr[len-2] = {};
     char empty_temp_arr[len-2] = {};
+
+    // get every sent character and convert to a floating value
     for(int i = 2; i < len; i++)
     {
       temp_arr[i-2] = char(incomingData[i]);
-      matlab_arr[i-2] = char(incomingData[i]);
     }
+
     cap_val = atof(temp_arr);
-//    matlab_arr[0] = atoi(temp_arr);
-//    for(int j=0; j<len-2; j++) Serial.print(temp_arr[j]);
+    // clear temporary variables
     memcpy(temp_arr, empty_temp_arr, len-2);
   }
+  // part for reading the temperature data
   else
   {
+    // count for visualisation, comment out when not in use
     count  = count + 1;
 
+    // temporary variables used
     int temp_val_1 = 0;
     float temp_val_2 = 0;
     int temp_cnt = 3;
@@ -72,10 +76,10 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
     char temp_arr_2[5] = {};
     char empty_temp_arr_2[5] = {};
 
+    // read temperature matrix and convert to array of float values
     for(int i = 0; i < len; i++)
     {
-//      Serial.print(char(incomingData[i]));
-//      Serial.println();
+      // the data is formated as such: [Nr. of the pixel in the matrix : value for according pixel]
       if(char(incomingData[i]) == ':')
       {
         temp_val_1 = atoi(temp_arr_1);
@@ -84,69 +88,29 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
 
         memcpy(temp_arr_1, empty_temp_arr_1, 3);
       }
+      // split the data accordingly and format into the correct space in the array 
       if(i > temp_cnt)
       {
-//        matlab_arr[strlen(matlab_arr+1)] = char(incomingData[i]);
-//        matlab_arr[i-temp_cnt-1+5] = char(incomingData[i]);
         temp_arr_2[i-temp_cnt-1] = char(incomingData[i]);
         if(i == len-1)
         {
           temp_val_2 = atof(temp_arr_2);
           arr[temp_val_1] = temp_val_2;
 
-//          for(int j=0; j<64; j++) Serial.print(arr[j]);               // irgendwo hier werden die Nachkommastellen zu 0 ????????????????
-//          Serial.println();
-          char test_temp[10] = {};
-          char empty_test_temp[10] = {};
-          for(int k=0; k<64; k++)
-          {
-//            if(arr[k] <= 0.001)
-//            {
-//              sprintf(test_temp, "%.2f", 10.00);
-//            }
-//            else
-//            {
-//              sprintf(test_temp, "%.2f", arr[k]);
-//            }
-            sprintf(test_temp, "%.2f", arr[k]);
-//            Serial.println(test_temp);
-            for(int g=0; g<strlen(test_temp); g++)
-            {
-              matlab_arr[(k*(strlen(test_temp)+1))+6+g] = test_temp[g];
-//              matlab_arr[(k*strlen(test_temp))+7+g] = test_temp[g];
-              //matlab_arr[k+6+g] = char(k+6+g);
-//              Serial.print((k*strlen(test_temp))+6+g);
-//              Serial.println(test_temp);
-            }
-//            matlab_arr[(k*strlen(test_temp))+7+strlen(test_temp)] = ',';
-            matlab_arr[(k*(strlen(test_temp)+1))+6+strlen(test_temp)] = ',';
-            memcpy(test_temp, empty_test_temp, 10);
-          }
-
           memcpy(temp_arr_2, empty_temp_arr_2, 5);
           temp_val_1 = 0;
           temp_val_2 = 0;
           temp_cnt = 3;
         }
-//        for(int k=1; k<65; k++) matlab_arr[k] = arr[k-1];
       }
       else
       {
         temp_arr_1[i] = char(incomingData[i]);
-      }
-    
+      }    
     }
-
   }
 
-//  Serial.println("MATLAB ARR:");
-//  Serial.println(matlab_arr);
-//  Serial.println("-----------");
-//  memcpy(matlab_arr, empty_matlab_arr, strlen(matlab_arr));
-
-//  for(int h=0; h<strlen(matlab_arr); h++) Serial.print(matlab_arr[h]);
-//  Serial.println();
-
+//---------- mainly used for visualisation in matlab, comment out when not in use ----------
   if(count == 64)
   {
     Serial.print(cap_val, 3);
@@ -159,9 +123,9 @@ void OnDataRecv(const uint8_t * mac_addr, const uint8_t *incomingData, int len) 
     Serial.println();
     count = 0;
   }
-
 }
- 
+
+
 void setup() {
   Serial.begin(115200);
   
@@ -179,5 +143,4 @@ void setup() {
 }
  
 void loop() {
-  delay(10000);  
 }
