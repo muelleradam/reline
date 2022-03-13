@@ -9,6 +9,7 @@
 #define config_h
 
 #define MAX_MESSAGE_LENGTH 10
+
 #define addr_1 0x24
 #define addr_2 0x6F
 #define addr_3 0x28
